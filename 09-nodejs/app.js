@@ -8,24 +8,27 @@ const file = new static.Server('./exercise');
 
 const server = http.createServer((req, res) => {
   // main route
-  if (req.method === 'GET' && req.url === '/') {
+  if (req.method === 'GET' && req.url === '/welcome') {
     file.serveFile('/welcome.html', 200, {}, req, res);
   }
   // form route
-  else if (req.method === 'GET' && req.url === '') {
+  else if (req.method === 'GET' && req.url === '/form') {
+    file.serveFile('/form.html', 200, {}, req, res);
     // fill out this route
   }
   // form submission
-  else if (req.method === 'POST' && req.url === '') {
+  else if (req.method === 'POST' && req.url === '/formExerciseSubmit') {
     let body = '';
 
     req.on('data', (chunk) => {
       body += chunk;
+      console.log(body);
     });
 
     req.on('end', () => {
       const userdata = querystring.parse(body);
-      const { usernameInput: name, emailInput: email } = userdata;
+      console.log(userdata);
+      const { nameInput: name, emailInput: email } = userdata;
 
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.write(`<p>Thank you for submitting your information: </p>`);
