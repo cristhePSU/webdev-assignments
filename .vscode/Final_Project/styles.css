@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.home-section {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+}
+
+.home-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.profile-img {
+    max-width: 250px;
+    display: block;
+    margin: auto;
+}
+
+.project-card {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.footer {
+    margin-top: 0;
+}
+
+
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .bg-light {
+    background-color: #1f1f1f !important;
+}
+
+.dark-mode .card {
+    background-color: #222;
+    color: white;
+}
